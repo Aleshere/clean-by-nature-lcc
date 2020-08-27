@@ -110,7 +110,7 @@ ul li a {
     height: .35rem;
     position: absolute;
     margin: 0 auto;
-    left: 16rem;
+    right: 2rem;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -o-transform: rotate(0deg);
@@ -843,9 +843,6 @@ input.custom-radio:checked ~ label {
 
 
 @media (min-width: 375px) and (orientation: portrait) {
-    #burger {
-        left: 19rem;
-    }
     .hero h1 {
         font-size: 1rem;   
     }
@@ -860,9 +857,6 @@ input.custom-radio:checked ~ label {
     }
 }
 @media (min-width: 375px) and (orientation: landscape) { 
-    #burger {
-        left: 34rem;
-    }
     #burger.open span:nth-child(2) {
         left: 40rem;
     }
@@ -890,9 +884,6 @@ input.custom-radio:checked ~ label {
 }
 
 @media (min-width: 768px) and (orientation: portrait) {
-    #burger span {
-        left: 14.5rem;
-    }
     #burger.open span:nth-child(2) {
         left: 22rem;
     }
