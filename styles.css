@@ -535,6 +535,10 @@ div.panel.show {
 
 /* CONTACT US */
 
+.u-visually-hidden {
+    display: none;
+}
+
 .contacts-wrapper {
     width: 100%;
     min-height: 40rem;
