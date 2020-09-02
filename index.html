@@ -6,7 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1.0"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-    <title>Clean by Nature</title>
+    <meta name="description" content="The Capital District's best natural cleaning company. We specialize in residential and small business cleaning services. Get your estimate today.">
+    <meta name="keywords" content="natural cleaning, residential cleaning, commercial cleaning, new york services"/>
+    <meta name="robots" content="nofollow"/>
+    <meta property="og:title" content="Clean By Nature LLC - NY">
+    <meta property="og:url" content="https://www.cleanbynaturellc.com">
+    <meta property="og:description" content="Natural cleaning services residential and commercial New York Upstate area. Get your estimate today.">
+    <title>Clean by Nature | Natural Cleaning Services</title>
     <link rel='stylesheet' href='styles.css'>
     <script src="https://kit.fontawesome.com/30b0605ae0.js" crossorigin="anonymous"></script>
 </head>
@@ -249,8 +255,9 @@
                         <h5>Email</h5>
                         <a href="mailto:info@cleanbynaturellc.com">info@cleanbynaturellc.com</a>
                     </div>
-                    <form name="estimates" netlify class="contact-form" method='POST' action="/index.html#hero" id="form" netlify-honeypot="bot-field">
+                    <form name="estimates" netlify class="contact-form" method='POST' action="/formSubmitted.html" id="form" netlify-honeypot="bot-field">
                         <h5>Get Your Estimate</h5>
+                        <p class="contactForm-notice">(Fields marked with * are necessary)</p>
                         <p class="u-visually-hidden">
                             <label>Don’t fill this out if you're human: <input name="bot-field"></label>
                         </p>
@@ -340,58 +347,60 @@
 
                         <div class="bottom-half-form">
                             <fieldset id="numbBaths">
-                                <h3>Number of bathrooms</h3>
+                                <h3>Number of bathrooms *</h3>
+                                    <input class="custom-radio" type="hidden" value="Bathrooms: " name="numbBaths" checked >
                                 <div class="radio-wrap fifth">
-                                    <input class="custom-radio" type="radio" value="1" name="numbBaths" id='bath1' required>
+                                    <input class="custom-radio" type="radio" value="1 bathroom" name="numbBaths" id='bath1' checked >
                                     <label for="bath1">1</label>
                                 </div>
 
                                 <div class="radio-wrap fifth">
-                                    <input class="custom-radio" type="radio" value="1.5" name="numbBaths" id='bath1h'>
+                                    <input class="custom-radio" type="radio" value="1.5 bathrooms" name="numbBaths" id='bath1h'>
                                     <label for="bath1h">1.5</label>
                                 </div>
 
                                 <div class="radio-wrap fifth">
-                                    <input class="custom-radio" type="radio" value="2" name="numbBaths" id='bath2'>
+                                    <input class="custom-radio" type="radio" value="2 bathrooms" name="numbBaths" id='bath2'>
                                     <label for="bath2">2</label>
                                 </div>
 
                                 <div class="radio-wrap fifth">
-                                    <input class="custom-radio" type="radio" value="1.5" name="numbBaths" id='bath2h'>
+                                    <input class="custom-radio" type="radio" value="2.5 bathrooms" name="numbBaths" id='bath2h'>
                                     <label for="bath2h">2.5</label>
                                 </div>
 
                                 <div class="radio-wrap fifth">
-                                    <input class="custom-radio" type="radio" value="3" name="numbBaths" id='bath3'>
+                                    <input class="custom-radio" type="radio" value="3 or more bathrooms" name="numbBaths" id='bath3'>
                                     <label for="bath3">3+</label>
                                 </div>
 
                             </fieldset>
 
                             <fieldset id="numbBeds">
-                                <h3>Number of bedrooms</h3>
+                                <h3>Number of bedrooms *</h3>
+                                <input class="custom-radio" type="hidden" value="Bedrooms: " name="numbBeds" checked >
                                 <div class="radio-wrap fifth">
-                                    <input class="custom-radio" type="radio" value="1" name="numbBeds" id='beds1' required>
+                                    <input class="custom-radio" type="radio" value="1 bedroom" name="numbBeds" id='beds1' checked >
                                     <label for="beds1">1</label>
                                 </div>
 
                                 <div class="radio-wrap fifth">
-                                    <input class="custom-radio" type="radio" value="2" name="numbBeds" id='beds2'>
+                                    <input class="custom-radio" type="radio" value="2 bedrooms" name="numbBeds" id='beds2'>
                                     <label for="beds2">2</label>
                                 </div>
 
                                 <div class="radio-wrap fifth">
-                                    <input class="custom-radio" type="radio" value="3" name="numbBeds" id='beds3'>
+                                    <input class="custom-radio" type="radio" value="3 bedrooms" name="numbBeds" id='beds3'>
                                     <label for="beds3">3</label>
                                 </div>
 
                                 <div class="radio-wrap fifth">
-                                    <input class="custom-radio" type="radio" value="4" name="numbBeds" id='beds4'>
+                                    <input class="custom-radio" type="radio" value="4 bedrooms" name="numbBeds" id='beds4'>
                                     <label for="beds4">4</label>
                                 </div>
 
                                 <div class="radio-wrap fifth">
-                                    <input class="custom-radio" type="radio" value="5" name="numbBeds" id='beds5'>
+                                    <input class="custom-radio" type="radio" value="5 or more bedrooms" name="numbBeds" id='beds5'>
                                     <label for="beds5">5+</label>
                                 </div>
 
@@ -402,47 +411,56 @@
                                 <h3>Other rooms <br> (select all that apply)</h3>
                                 
                                 <div class="radio-wrap-checkbox">
-                                    <input class="custom-radio" type="checkbox" name="kitchen" value="kitchen" id="kitchen">
+                                    <input type="hidden" value='FALSE' name='kitchen' >
+                                    <input class="custom-radio" type="checkbox" name="kitchen" value="TRUE" id="kitchen">
                                     <label for="kitchen">Kitchen</label>
                                 </div>
 
                                 <div class="radio-wrap-checkbox">
-                                    <input class="custom-radio" type="checkbox" name="eatInKitchen" value="eatInKitchen" id="eatInKitchen">
+                                    <input type="hidden" value='FALSE' name='eatInKitchen' >
+                                    <input class="custom-radio" type="checkbox" name="eatInKitchen" value="TRUE" id="eatInKitchen">
                                     <label for="eatInKitchen">Eat-In Kitchen</label>
                                 </div>
 
                                 <div class="radio-wrap-checkbox">
-                                    <input class="custom-radio" type="checkbox" name="livingRoom" value="living" id="livingRoom">
+                                    <input type="hidden" value='FALSE' name='livingRoom' >
+                                    <input class="custom-radio" type="checkbox" name="livingRoom" value="TRUE" id="livingRoom">
                                     <label for="livingRoom">Living Room</label>
                                 </div>
 
                                 <div class="radio-wrap-checkbox">
-                                    <input class="custom-radio" type="checkbox" name="diningRoom" value="dining" id="diningRoom">
+                                    <input type="hidden" value='FALSE' name='diningRoom' >
+                                    <input class="custom-radio" type="checkbox" name="diningRoom" value="TRUE" id="diningRoom">
                                     <label for="diningRoom">Dining Room</label>
                                 </div>
 
                                 <div class="radio-wrap-checkbox">
-                                    <input class="custom-radio" type="checkbox" name="familyRoom" value="family" id="familyRoom">
+                                    <input type="hidden" value='FALSE' name='familyRoom' >
+                                    <input class="custom-radio" type="checkbox" name="familyRoom" value="TRUE" id="familyRoom">
                                     <label for="familyRoom">Family Room</label>
                                 </div>
 
                                 <div class="radio-wrap-checkbox">
-                                    <input class="custom-radio" type="checkbox" name="officeRoom" value="office" id="officeRoom">
+                                    <input type="hidden" value='FALSE' name='officeRoom' >
+                                    <input class="custom-radio" type="checkbox" name="officeRoom" value="TRUE" id="officeRoom">
                                     <label for="officeRoom">Office Room</label>
                                 </div>
 
                                 <div class="radio-wrap-checkbox">
-                                    <input class="custom-radio" type="checkbox" name="laundryRoom" value="laundry" id="laundryRoom">
+                                    <input type="hidden" value='FALSE' name='laundryRoom' >
+                                    <input class="custom-radio" type="checkbox" name="laundryRoom" value="TRUE" id="laundryRoom">
                                     <label for="laundryRoom">Laundry Room</label>
                                 </div>
 
                                 <div class="radio-wrap-checkbox">
-                                    <input class="custom-radio" type="checkbox" name="hallway" value="hallway" id="hallway">
+                                    <input type="hidden" value='FALSE' name='hallway' >
+                                    <input class="custom-radio" type="checkbox" name="hallway" value="TRUE" id="hallway">
                                     <label for="hallway">Hallway</label>
                                 </div>
 
                                 <div class="radio-wrap-checkbox">
-                                    <input class="custom-radio" type="checkbox" name="stairs" value="stairs" id="stairs">
+                                    <input type="hidden" value='FALSE' name='stairs' >
+                                    <input class="custom-radio" type="checkbox" name="stairs" value="TRUE" id="stairs">
                                     <label for="stairs">Stairs</label>
                                 </div>
                             </fieldset>
@@ -453,39 +471,40 @@
                             </div>
 
                             <fieldset id="frequency">
-                                <h3>Frequency of cleaning</h3>
+                                <h3>Frequency of cleaning *</h3>
 
+                                <input class="custom-radio" type="hidden" value="Cleaning Frequency: " name="cleanFreq" checked >
                                 <div class="frequency">
-                                    <input class="custom-radio" type="radio" value="daily" name="cleanFreq" id='daily' required>
+                                    <input class="custom-radio" type="radio" value="daily cleaning" name="cleanFreq" id='daily' checked >
                                     <label for="daily">Daily</label>
                                 </div>
 
                                 <div class="frequency">
-                                    <input class="custom-radio" type="radio" value="weekly" name="cleanFreq" id='weekly'>
+                                    <input class="custom-radio" type="radio" value="weekly cleaning" name="cleanFreq" id='weekly'>
                                     <label for="weekly">Weekly</label>
                                 </div>
 
 
                                 <div class="frequency">
-                                    <input class="custom-radio" type="radio" value="biWeekly" name="cleanFreq" id='biWeekly'>
+                                    <input class="custom-radio" type="radio" value="biWeekly cleaning" name="cleanFreq" id='biWeekly'>
                                     <label for="biWeekly">Bi-Weekly</label>
                                 </div>
 
 
                                 <div class="frequency">
-                                    <input class="custom-radio" type="radio" value="monthly" name="cleanFreq" id='monthly'>
+                                    <input class="custom-radio" type="radio" value="monthly cleaning" name="cleanFreq" id='monthly'>
                                     <label for="monthly">Monthly</label>
                                 </div>
 
 
                                 <div class="frequency">
-                                    <input class="custom-radio" type="radio" value="oneTime" name="cleanFreq" id='oneTime'>
+                                    <input class="custom-radio" type="radio" value="one time cleaning" name="cleanFreq" id='oneTime'>
                                     <label for="oneTime">One Time</label>
                                 </div>
 
 
                                 <div class="frequency">
-                                    <input class="custom-radio" type="radio" value="frequencyOther" name="cleanFreq" id='frequencyOther'>
+                                    <input class="custom-radio" type="radio" value="cleaning frequency not specified" name="cleanFreq" id='frequencyOther'>
                                     <label for="frequencyOther">Other</label>
                                 </div>
                             

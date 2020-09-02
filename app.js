@@ -103,8 +103,6 @@ window.onload = function() {
 };
 
 
-
-
 // FORM CONTROL - VALIDATION
 const submitBtn = document.getElementById('form-submit');
 const form = document.getElementById('form');
@@ -116,8 +114,6 @@ const dayPhone = document.getElementById('dayPhone');
 const email = document.getElementById('email');
 const emailVerify = document.getElementById('email-verify');
 
-
-
 form.addEventListener('click', (e) => {
 
     
@@ -125,6 +121,7 @@ form.addEventListener('click', (e) => {
 
     checkInputs();
 });
+
 
 function checkInputs() {
     // get values of inputs
