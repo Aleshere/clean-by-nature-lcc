@@ -136,7 +136,7 @@ function checkInputs() {
     
 
 
-    if(firstNameValue === ''){
+    if(firstNameValue === '' || firstNameValue === 'Henrycounk'){
         // show error
         // add error class
         setErrorFor(fname, 'Please provide your first name');
