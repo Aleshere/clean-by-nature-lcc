@@ -113,13 +113,14 @@ const zip = document.getElementById('zip');
 const dayPhone = document.getElementById('dayPhone');
 const email = document.getElementById('email');
 const emailVerify = document.getElementById('email-verify');
+const messageTextarea = document.getElementById('message');
 
-form.addEventListener('click', (e) => {
+submitBtn.addEventListener('click', (e) => {
 
-    
-    // e.preventDefault();
-
+    e.preventDefault();
     checkInputs();
+
+
 });
 
 
@@ -131,24 +132,25 @@ function checkInputs() {
     const zipValue = zip.value.trim();
     const emailValue = email.value.trim();
     const emailVerifyValue = emailVerify.value.trim();
-
-    console.log(firstNameValue);
-    
-
+    const messageValue = messageTextarea.value.trim();
 
     if(firstNameValue === '' || firstNameValue === 'Henrycounk'){
         // show error
         // add error class
         setErrorFor(fname, 'Please provide your first name');
+        fname.parentElement.scrollIntoView();
+        return;
     } else {
         // add success class
-        setSuccessFor(fname)
+        setSuccessFor(fname);
     }
 
     if(surnameValue === ''){
         // show error
         // add error class
         setErrorFor(surname, 'Please provide your last name');
+        surname.parentElement.scrollIntoView();
+        return;
     } else {
         // add success class
         setSuccessFor(surname)
@@ -158,6 +160,8 @@ function checkInputs() {
         // show error
         // add error class
         setErrorFor(street, 'Please provide your street');
+        street.parentElement.scrollIntoView();
+        return;
     } else {
         // add success class
         setSuccessFor(street)
@@ -167,6 +171,8 @@ function checkInputs() {
         // show error
         // add error class
         setErrorFor(zip, 'Please provide your zip code');
+        zip.parentElement.scrollIntoView();
+        return;
     } else {
         // add success class
         setSuccessFor(zip)
@@ -174,39 +180,49 @@ function checkInputs() {
 
     if(emailValue === ''){
         setErrorFor(email, 'Email cannot be blank');
+        email.parentElement.scrollIntoView();
+        return;
     } else if(!isEmail(emailValue)){
         setErrorFor(email, 'Email is not valid');
+        email.parentElement.scrollIntoView();
+        return;
     } else {
         setSuccessFor(email)
     }
 
     if(emailVerifyValue === ''){
         setErrorFor(emailVerify, 'Email confirmation cannot be blank');
+        emailVerify.parentElement.scrollIntoView();
+        return;
     } else if(emailValue !== emailVerifyValue){
         setErrorFor(emailVerify, 'The emails provided do not match');
+        emailVerify.parentElement.scrollIntoView();
+        return;
     } else {
         setSuccessFor(emailVerify);
     }
 
+    let spamWord = 'http';
+    if(messageValue.indexOf(spamWord) != -1){
+        setErrorFor(messageTextarea, 'Links are not allowed within comments');
+        return;
+    } else {
+        setSuccessFor(messageTextarea);
+    }
 
-    // show a success message
-    // const formControl = document.querySelector('.form-control');
-
-    // if(formControl.className === 'form-control success'){
-    //     alert('Form Successfully Submitted');
-    // }
-    
+    form.submit();
 }
 
 function setErrorFor(input, message){
-    const formControl = input.parentElement;
-    const small = formControl.querySelector('small');
+    const formControl = input.parentElement;    
+    const smallFormControl = formControl.querySelector('small'); 
 
     // add error inside small
-    small.innerText = message;
+    smallFormControl.innerText = message;
 
     // add error class
-    formControl.className = 'group error';
+    formControl.className = 'group error';   
+
 }
 
 function setSuccessFor(input){
